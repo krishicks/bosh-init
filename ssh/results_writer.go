@@ -19,7 +19,7 @@ func NewResultsWriter(ui boshui.UI) *ResultsWriter {
 	return &ResultsWriter{ui: ui}
 }
 
-func (w *ResultsWriter) ForInstance(jobName, indexOrID string) InstanceWriter {
+func (w *ResultsWriter) ForInstance(jobName, indexOrID, host string) InstanceWriter {
 	w.instances = append(w.instances, newBufferedInstanceWriter(jobName, indexOrID))
 	return w.instances[len(w.instances)-1]
 }

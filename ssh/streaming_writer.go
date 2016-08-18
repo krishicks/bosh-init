@@ -15,7 +15,7 @@ func NewStreamingWriter(comboWriter *boshui.ComboWriter) *StreamingWriter {
 	return &StreamingWriter{comboWriter: comboWriter}
 }
 
-func (w StreamingWriter) ForInstance(jobName, indexOrID string) InstanceWriter {
+func (w StreamingWriter) ForInstance(jobName, indexOrID, host string) InstanceWriter {
 	return streamingInstanceWriter{jobName: jobName, indexOrID: indexOrID, comboWriter: w.comboWriter}
 }
 

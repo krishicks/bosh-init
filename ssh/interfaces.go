@@ -38,7 +38,7 @@ type Session interface {
 }
 
 type Writer interface {
-	ForInstance(jobName, indexOrID string) InstanceWriter
+	ForInstance(jobName, indexOrID, host string) InstanceWriter
 	Flush()
 }
 

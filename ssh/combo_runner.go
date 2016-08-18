@@ -92,7 +92,7 @@ func (r ComboRunner) makeCmds(hosts []boshdir.Host, sshOpts []string, cmdFactory
 			jobName = host.Job
 		}
 
-		instWriter := r.writer.ForInstance(jobName, host.IndexOrID)
+		instWriter := r.writer.ForInstance(jobName, host.IndexOrID, host.Host)
 
 		if cmd.Stdout == nil && cmd.Stderr == nil {
 			cmd.Stdout = instWriter.Stdout()
